@@ -93,6 +93,9 @@ span.account {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
+    width: fit-content;
+    cursor: url("assets/images/hand-pointer.svg"), auto;
 }
 
 span.account::before {
@@ -103,6 +106,32 @@ span.account::before {
     background-image: url("assets/images/image-avatar.webp");
     background-size: contain;
     display: block;
+}
+
+.account-box {
+    width: 200px;
+    height: 60px;
+    padding: 5px 0;
+    box-sizing: content-box;
+    border: 1px solid;
+    border-radius: 10px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--box-bg-color);
+    position: absolute;
+    top: -100px;
+}
+
+.image {
+    width: 60px;
+    height: 60px;
+    background-image: url("assets/images/image-avatar.webp");
+    background-size: contain;
+}
+
+span.account:hover .account-box {
+    display: flex;
 }
 
 .attribution {
@@ -123,25 +152,6 @@ span.account::before {
 .attribution a:hover {
     font-size: 1.1em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* large screen */
 @media (min-width:376px) {
@@ -166,7 +176,6 @@ span.account::before {
         font-size: 1.2em;
     }
 }
-
 
 @media (max-width: 321px) {
     article {
