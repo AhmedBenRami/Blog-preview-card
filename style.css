@@ -72,6 +72,21 @@ h2:hover {
     animation: text-color 0.5s linear forwards;
 }
 
+@supports (-moz-appearance: none) {
+    h2 {
+        width: fit-content;
+        background: transparent;
+        background-clip: content-box;
+        color: var(--main-text-color);
+        cursor: url("assets/images/hand-pointer.svg"), auto;
+        transition: all linear 0.3s;
+    }
+
+    h2:hover {
+        color: var(--body-bg-color);
+    }
+}
+
 @property --per {
     syntax: "<percentage>";
     inherits: true;
