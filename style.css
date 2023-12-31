@@ -26,7 +26,7 @@ body {
     cursor: url("assets/images/arrow-pointer.svg"), auto;
 }
 
-article {
+main {
     border: 1px solid;
     display: flex;
     flex-direction: column;
@@ -37,25 +37,23 @@ article {
     background-color: var(--box-bg-color);
 }
 
-article::before {
-    content: "";
+img.illustration {
     aspect-ratio: 336 / 201;
-    background-image: url("assets/images/illustration-article.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 10px;
 }
 
-span.category {
+a.category {
     font-weight: 800;
+    text-decoration: none;
     width: fit-content;
     padding: 5px 10px;
     background-color: var(--body-bg-color);
     border-radius: 5px;
     color: var(--main-text-color);
+    cursor: url("assets/images/hand-pointer.svg"), auto;
 }
 
-span.publish-date {
+time.publish-date {
     margin-top: -10px;
     color: var(--paragraph-text-color);
 }
@@ -103,24 +101,24 @@ p {
     color: var(--paragraph-text-color);
 }
 
-span.account {
+article.account {
     font-weight: 800;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     position: relative;
     width: fit-content;
     cursor: url("assets/images/hand-pointer.svg"), auto;
 }
 
-span.account::before {
-    content: "";
+div.account-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img.mini-avatar {
     width: 35px;
     height: 35px;
     margin-right: 16px;
-    background-image: url("assets/images/image-avatar.webp");
-    background-size: contain;
-    display: block;
 }
 
 .account-box {
@@ -138,14 +136,14 @@ span.account::before {
     top: -100px;
 }
 
-.image {
+img.avatar {
     width: 60px;
     height: 60px;
     background-image: url("assets/images/image-avatar.webp");
     background-size: contain;
 }
 
-span.account:hover .account-box {
+article.account:hover .account-box {
     display: flex;
 }
 
@@ -170,7 +168,7 @@ span.account:hover .account-box {
 
 /* large screen */
 @media (min-width:376px) {
-    article {
+    main {
         width: 381px;
         height: 520px;
     }
@@ -178,12 +176,12 @@ span.account:hover .account-box {
 
 /* small screen */
 @media (max-width: 376px) {
-    article {
+    main {
         width: 300px;
         height: 400px;
     }
 
-    span.publish-date {
+    time.publish-date {
         margin-top: 0;
     }
 
@@ -193,7 +191,7 @@ span.account:hover .account-box {
 }
 
 @media (max-width: 321px) {
-    article {
+    main {
         margin-left: -10px;
     }
 }
